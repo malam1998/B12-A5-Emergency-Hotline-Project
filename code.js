@@ -64,3 +64,17 @@ for (const callIcon of callIcons) {
     }
   });
 }
+
+// clear functionality
+const clearbtn = getElement("clear-button");
+clearbtn.addEventListener("click", function () {
+  const historySection = getElement("call-history");
+
+  if (historySection.innerHTML === "") {
+    alert("Invalid request");
+    return;
+  } else {
+    callHistory = [];
+    historySection.innerHTML = "";
+  }
+});
