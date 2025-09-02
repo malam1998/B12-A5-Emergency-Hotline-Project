@@ -26,6 +26,8 @@ for (const callIcon of callIcons) {
     const title = card.querySelector(".card-title").innerText;
     const number = card.querySelector(".card-number").innerText;
 
+    callIcon.classList.add("hover:bg-gray-200");
+
     const coins = parseInt(document.getElementById("coin-value").innerText);
     const totalcoin = coins - 20;
 
