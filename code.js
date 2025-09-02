@@ -45,5 +45,22 @@ for (const callIcon of callIcons) {
 
     callHistory.push(history);
     // console.log(callHistory);
+
+    // call history
+    const historySection = getElement("call-history");
+    historySection.innerText = "";
+    for (const data of callHistory) {
+      const div = document.createElement("div");
+      div.innerHTML = `<div class="bg-[#fafafa] flex justify-between items-center p-2 my-3 rounded-lg">
+                    <div>
+                        <h1 class="text-[18px] font-[600]">${data.name}</h1>
+                        <h2 class="text-gray-500">${data.number}</h2>
+                    </div>
+                    <div>
+                        <p class="text-[18px] font-[600]">${data.date}</p>
+                    </div>
+                </div>`;
+      historySection.appendChild(div);
+    }
   });
 }
